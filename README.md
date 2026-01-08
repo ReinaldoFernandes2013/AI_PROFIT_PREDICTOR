@@ -1,41 +1,54 @@
-# 🚚 AI Logistics Optimizer - Previsão de Entrega com Regressão
+# 🚚 AI Logistics Optimizer - Previsão de Entrega com Regressão (v2.0)
 
-Este projeto utiliza Inteligência Artificial para prever o tempo de entrega de mercadorias no e-commerce (Dataset Olist), ajudando na otimização logística e na transparência com o cliente.
+Este projeto utiliza Inteligência Artificial de ponta para prever o tempo de entrega de mercadorias no e-commerce (Dataset Olist), auxiliando na transparência logística e na tomada de decisão estratégica.
 
 ## 🧠 Perfil do Projeto
-- **Papel**: AI Scientist & Machine Learning Engineer.
-- **Problema**: Regressão (Previsão de valores contínuos/dias).
-- **Modelo**: XGBoost Regressor.
-- **Interface**: Dashboard Interativo com Streamlit.
+- **Papéis**: AI Scientist, Machine Learning Engineer & Quality Assurance (QA).
+- **Tipo de Problema**: Regressão (Previsão de dias de entrega).
+- **Modelo Principal**: XGBoost Regressor.
+- **Interface**: Dashboard Interativo v2 com inteligência geográfica.
 
 ## 🛠️ Tecnologias e Bibliotecas
 - **Python 3.12**
-- **Pandas & Numpy**: Processamento de dados.
-- **Scikit-Learn**: Divisão de treino/teste e métricas (MAE, R²).
+- **Pandas & Numpy**: Processamento e engenharia de atributos.
 - **XGBoost**: Algoritmo de alta performance para regressão.
-- **Streamlit**: Interface Web de predição.
+- **Streamlit**: Deploy de interface web intuitiva.
+- **Pytest**: Automação de testes de qualidade.
 
-## 📊 Performance do Modelo
-O modelo foi treinado com mais de 88.000 amostras e alcançou:
-- **Erro Médio Absoluto (MAE)**: ~5.44 dias.
-- **Variáveis Principais**: Preço, Valor do Frete e Peso do Produto.
+## 📊 Performance e Refinamento
+O projeto passou por um ciclo de otimização focado em **Engenharia de Atributos** e limpeza de dados.
 
-## 📂 Estrutura de Pastas
-- `data/`: Dados brutos e processados.
-- `models/`: Arquivos binários do modelo treinado (`.pkl`).
-- `src/`: Scripts de engenharia de dados, treinamento e App.
-- `notebooks/`: Análises exploratórias e visualizações.
+| Métrica | Versão Inicial | Versão 2.0 (Refinada) | Status |
+| :--- | :--- | :--- | :--- |
+| **Erro Médio (MAE)** | 5.44 dias | **5.11 dias** | ✅ Melhoria na Precisão |
+| **Coeficiente R²** | 0.17 | **0.23** | 📈 Ganho de 35% de performance |
+| **Principais Atributos** | Preço, Frete, Peso | **+ Localização Interestadual** | 🌎 Inteligência Geográfica |
 
 ## 🧪 Garantia de Qualidade (QA)
-Para garantir a integridade da pipeline de dados e do modelo, o projeto conta com testes automatizados:
-- **Ferramenta**: Pytest.
-- **Cobertura**: Verificação de existência de dados brutos, integridade do dataset processado e presença do modelo serializado (`.pkl`).
+Para garantir a confiabilidade do software em produção, implementamos testes automatizados que validam:
+- **Pipeline de Dados**: Existência e integridade dos arquivos CSV.
+- **Processamento**: Verificação da geração do dataset limpo e filtrado.
+- **Persistência do Modelo**: Garantia de que o arquivo `.pkl` está pronto para o deploy.
 
 Para rodar os testes:
 ```bash
 pytest
 
-## 🚀 Como Executar
-1. Ative o ambiente virtual: `source venv/Scripts/activate`
-2. Instale as dependências: `pip install -r requirements.txt`
-3. Rode o App: `streamlit run src/app.py`
+📂 Estrutura de Pastas
+data/: Datasets originais e processados (amostras filtradas de 0 a 60 dias).
+
+models/: Binários do modelo treinado (delivery_model.pkl).
+
+src/: Scripts de preparação de dados, treinamento e App Streamlit.
+
+tests/: Scripts de testes automatizados com Pytest.
+
+notebooks/: Análises exploratórias e visualizações logísticas.
+
+🚀 Como Executar
+Ative o ambiente virtual: source venv/Scripts/activate
+
+Instale as dependências: pip install -r requirements.txt
+
+Execute o App: streamlit run src/app.py
+
