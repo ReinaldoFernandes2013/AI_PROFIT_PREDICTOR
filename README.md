@@ -26,6 +26,15 @@ O modelo foi treinado com mais de 88.000 amostras e alcançou:
 - `src/`: Scripts de engenharia de dados, treinamento e App.
 - `notebooks/`: Análises exploratórias e visualizações.
 
+## 🧪 Garantia de Qualidade (QA)
+Para garantir a integridade da pipeline de dados e do modelo, o projeto conta com testes automatizados:
+- **Ferramenta**: Pytest.
+- **Cobertura**: Verificação de existência de dados brutos, integridade do dataset processado e presença do modelo serializado (`.pkl`).
+
+Para rodar os testes:
+```bash
+pytest
+
 ## 🚀 Como Executar
 1. Ative o ambiente virtual: `source venv/Scripts/activate`
 2. Instale as dependências: `pip install -r requirements.txt`
